@@ -3,8 +3,8 @@ package algot.emil.messagesapi.services;
 
 import algot.emil.messagesapi.dto.NameDTO;
 import algot.emil.messagesapi.dto.StaffDTO;
-import algot.emil.messagesapi.entities.people.Staff;
-import algot.emil.messagesapi.enums.UserPrivilege;
+import algot.emil.entities.Staff;
+import algot.emil.enums.UserPrivilege;
 import algot.emil.messagesapi.repositories.StaffRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;

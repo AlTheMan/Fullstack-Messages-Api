@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import algot.emil.messagesapi.services.StaffService;
 import algot.emil.messagesapi.services.DoctorService;
 import algot.emil.messagesapi.services.MessageService;
+import algot.emil.messagesapi.services.UserService;
+import algot.emil.messagesapi.services.PatientService;
 
 
 import java.util.ArrayList;
@@ -63,7 +65,7 @@ public class MessageController {
         List<Long> patientIdList = messageService.getPatientListById(id);
         List<PatientDTO> patientDTOs = new ArrayList<>();
         for (Long l : patientIdList) {
-            PatientDTO p = patientService.getPatientFromFhirByPatientId(l);
+            PatientDTO p = patientService.getPatientById(l);
             patientDTOs.add(p);
         }
         return patientDTOs;

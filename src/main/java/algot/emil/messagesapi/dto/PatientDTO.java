@@ -1,45 +1,28 @@
 package algot.emil.messagesapi.dto;
 
 
-import algot.emil.messagesapi.enums.Sex;
+import algot.emil.enums.Sex;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class PatientDTO {
 
+
+
+    private Long id;
+
     private String firstName;
-    private String familyName;
-
+    private String lastName;
     private Sex sex;
-    private Long patientId;
-
     private LocalDate birthdate;
 
-    public PatientDTO(String firstName, String familyName, Sex sex, LocalDate birthdate) {
-        this.firstName = firstName;
-        this.familyName = familyName;
-        this.sex = sex;
-        this.birthdate = birthdate;
-        this.patientId=-1L;
+    public Long getId() {
+        return id;
     }
 
-    public PatientDTO(String firstName, String familyName, Sex sex, Long patientId, LocalDate birthdate) {
-        this.firstName = firstName;
-        this.familyName = familyName;
-        this.sex = sex;
-        this.patientId = patientId;
-        this.birthdate = birthdate;
-    }
-
-    public PatientDTO() {
-    }
-
-    public Long getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -50,12 +33,12 @@ public class PatientDTO {
         this.firstName = firstName;
     }
 
-    public String getFamilyName() {
-        return familyName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Sex getSex() {
@@ -73,4 +56,27 @@ public class PatientDTO {
     public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
-}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PatientDTO that = (PatientDTO) o;
+        return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && sex == that.sex && Objects.equals(birthdate, that.birthdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, sex, birthdate);
+    }
+
+    @Override
+    public String toString() {
+        return "PatientDTO{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", sex=" + sex +
+                ", birthdate=" + birthdate +
+                '}';
+    }}

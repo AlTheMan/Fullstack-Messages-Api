@@ -1,7 +1,8 @@
 package algot.emil.messagesapi.services;
 
 
-import algot.emil.messagesapi.entities.user.AppUser;
+
+import algot.emil.entities.User;
 import algot.emil.messagesapi.repositories.PatientRepository;
 import algot.emil.messagesapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class UserService {
 	 */
 
 	public Long getUserIdFromEmail(String email) {
-		Optional<AppUser> user = userRepository.findAppUserByEmail(email);
-		return user.map(AppUser::getId).orElse(null);
+		Optional<User> user = userRepository.findByEmail(email);
+		return user.map(User::getId).orElse(null);
 
 	}
 
