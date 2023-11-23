@@ -2,11 +2,11 @@ spring:
   jpa:
     show-sql: false
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update #create-drop #om man vill droppa
     properties:
       hibernate:
         format_sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/messagesapi_db
+    url: jdbc:postgresql://localhost:5432/test_db
     username: postgres
     password: password
