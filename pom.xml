@@ -17,6 +17,19 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>algot.emil</groupId>
+            <artifactId>ApiLibrary</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>algot.emil</groupId>
+            <artifactId>ApiLibrary-1.0.jar</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/ApiLibrary-1.0.jar</systemPath>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r4 -->
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>

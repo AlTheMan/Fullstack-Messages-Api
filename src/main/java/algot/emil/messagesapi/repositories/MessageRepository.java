@@ -1,6 +1,6 @@
 package algot.emil.messagesapi.repositories;
 
-import algot.emil.messagesapi.entities.Message;
+import algot.emil.entities.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

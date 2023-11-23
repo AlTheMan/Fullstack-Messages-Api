@@ -5,7 +5,7 @@ import algot.emil.messagesapi.dto.GetMessageDTO;
 import algot.emil.messagesapi.dto.PatientDTO;
 import algot.emil.messagesapi.dto.SendMessageDTO;
 import algot.emil.messagesapi.dto.StaffDTO;
-import algot.emil.messagesapi.entities.Message;
+import algot.emil.entities.Message;
 import algot.emil.messagesapi.services.*;
 import org.springframework.web.bind.annotation.*;
 import algot.emil.messagesapi.services.StaffService;

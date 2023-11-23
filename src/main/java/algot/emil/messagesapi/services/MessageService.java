@@ -2,7 +2,7 @@ package algot.emil.messagesapi.services;
 
 import algot.emil.messagesapi.dto.GetMessageDTO;
 import algot.emil.messagesapi.dto.SendMessageDTO;
-import algot.emil.messagesapi.entities.Message;
+import algot.emil.entities.Message;
 import algot.emil.messagesapi.repositories.MessageRepository;
 import org.springframework.stereotype.Service;
 
