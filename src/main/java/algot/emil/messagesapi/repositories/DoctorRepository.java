@@ -10,9 +10,6 @@ import java.util.Optional;
 
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 
-    public Doctor getDoctorByAppUser_Id(Long appUserId);
-
-    public Optional<Doctor> getDoctorByFhirId(String fhirId);
 
     public Optional<Doctor> getDoctorById(Long id);
 

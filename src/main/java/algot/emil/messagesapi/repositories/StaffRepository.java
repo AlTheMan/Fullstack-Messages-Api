@@ -13,11 +13,5 @@ import java.util.Optional;
 @Repository
 public interface StaffRepository extends JpaRepository<Staff, Long> {
 
-    public Staff getStaffByAppUser_Id(Long appUserId);
-
-    @Query("SELECT s FROM Staff s WHERE s.firstName = :firstName AND s.lastName = :lastName ORDER BY s.id DESC")
-    List<Staff> findStaffByFirstNameAndLastNameList(@Param("firstName") String firstName, @Param("lastName") String lastName);
-
-    Optional<Staff> findStaffByFirstNameAndLastName(String firstName, String lastName);
 
 }

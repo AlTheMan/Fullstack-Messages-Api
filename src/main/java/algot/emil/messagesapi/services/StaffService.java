@@ -1,11 +1,13 @@
 package algot.emil.messagesapi.services;
 
 
+import algot.emil.entities.User;
 import algot.emil.messagesapi.dto.NameDTO;
 import algot.emil.messagesapi.dto.StaffDTO;
 import algot.emil.entities.Staff;
 import algot.emil.enums.UserPrivilege;
 import algot.emil.messagesapi.repositories.StaffRepository;
+import algot.emil.messagesapi.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -16,18 +18,22 @@ import java.util.Optional;
 @Service
 public class StaffService {
 	private final StaffRepository repository;
+	private final UserRepository userRepository;
 
-	public StaffService(StaffRepository repository) {
+	public StaffService(StaffRepository repository, UserRepository userRepository) {
 		this.repository = repository;
+		this.userRepository = userRepository;
 	}
 
 	public Long getStaffIdByUserId(Long userId){
 		if(userId<0) return -1L;
-		Staff staff= repository.getStaffByAppUser_Id(userId);
-		if (staff==null){
+		Optional<User> user = userRepository.findById(userId);
+		if(user==null ||user.isEmpty()) return -1L;
+		Optional<Staff> staff= repository.findById(user.get().getId());
+		if (staff==null || staff.isEmpty()){
 			return -1L;
 		}
-		return staff.getId();
+		return staff.get().getId();
 	}
 
 	public List<StaffDTO> getAllStaff() {

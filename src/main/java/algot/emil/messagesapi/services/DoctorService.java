@@ -22,18 +22,6 @@ public class DoctorService {
 		this.repository = repository;
 	}
 
-	public Long getDoctorIdByUserId(Long userId) {
-		if (userId < 0) return -1L;
-		Doctor doctor = repository.getDoctorByAppUser_Id(userId);
-		if (doctor == null) {
-			return -1L;
-		}
-		return doctor.getId();
-	}
-
-	public Doctor getDoctorByUserId(long userId) {
-		 return repository.getDoctorByAppUser_Id(userId);
-	}
 
 	public List<StaffDTO> getDoctorsById(List<Long> staffIdList) {
 		List<Doctor> doctors = repository.findAllById(staffIdList);
