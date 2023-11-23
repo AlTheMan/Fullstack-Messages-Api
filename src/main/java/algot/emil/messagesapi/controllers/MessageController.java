@@ -8,6 +8,10 @@ import algot.emil.messagesapi.dto.StaffDTO;
 import algot.emil.messagesapi.entities.Message;
 import algot.emil.messagesapi.services.*;
 import org.springframework.web.bind.annotation.*;
+import algot.emil.messagesapi.services.StaffService;
+import algot.emil.messagesapi.services.DoctorService;
+import algot.emil.messagesapi.services.MessageService;
+
 
 import java.util.ArrayList;
 import java.util.List;

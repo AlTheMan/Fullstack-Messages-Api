@@ -2,7 +2,6 @@ package algot.emil.messagesapi.services;
 
 
 import algot.emil.messagesapi.dto.NameDTO;
-import algot.emil.messagesapi.dto.RegisterStaffDTO;
 import algot.emil.messagesapi.dto.StaffDTO;
 import algot.emil.messagesapi.entities.people.Staff;
 import algot.emil.messagesapi.enums.UserPrivilege;
@@ -68,31 +67,4 @@ public class StaffService {
 
 	}
 
-	@Transactional
-    public Long addStaff(RegisterStaffDTO dto) {
-
-		Staff staff = new Staff(dto.firstName(),dto.lastName());
-		repository.save(staff);
-		Optional<Staff> staff2 = repository.findStaffByFirstNameAndLastName(dto.firstName(), dto.lastName());
-
-		//alternativt: för att hitta den senaste staffen via firstName och lastName, så man kan ha flera staff med first name och last name:
-		/*
-		List<Staff> staffList = repository.findStaffByFirstNameAndLastNameList(dto.firstName(), dto.lastName());
-		Staff latestStaff = null;
-		if (!staffList.isEmpty()) {
-			latestStaff = staffList.getLast(); // The first staff member in the list is the latest one
-			repository.updateAppUserInStaff(dto.userId(),latestStaff.getId());
-			return latestStaff.getId();
-		}*/
-
-
-		if(staff2!=null && staff2.isPresent()){
-			repository.updateAppUserInStaff(dto.userId(),staff2.get().getId());
-			System.out.println("StaffService - Saved Staff. staffId:"+ staff2.get().getId() + ", userId: "+dto.userId());
-			return staff2.get().getId();
-		}else{
-			System.out.println("StaffService - could not save staff to repository.");
-			return -1L;
-		}
-    }
 }
