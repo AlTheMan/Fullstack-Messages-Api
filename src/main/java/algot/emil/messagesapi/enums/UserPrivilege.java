@@ -1,4 +1,4 @@
-package algot.emil.journalapi.enums;
+package algot.emil.messagesapi.enums;
 
 public enum UserPrivilege {
 	PATIENT, STAFF, DOCTOR, NONE, NEWPATIENT, NEWSTAFF, NEWDOCTOR

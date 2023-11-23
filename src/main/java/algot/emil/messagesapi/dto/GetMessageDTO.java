@@ -1,6 +1,6 @@
 package algot.emil.messagesapi.dto;
 
-public class GetMessagesDTO {
+public class GetMessageDTO {
     private final Long employeeId;
     private final Long patientId;
 

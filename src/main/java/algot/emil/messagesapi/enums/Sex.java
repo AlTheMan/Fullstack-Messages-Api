@@ -1,4 +1,4 @@
-package algot.emil.journalapi.enums;
+package algot.emil.messagesapi.enums;
 
 public enum Sex {
 	MALE, FEMALE
