@@ -49,9 +49,8 @@ public class MessageController {
      */
     @GetMapping("/getAllStaff")
     public List<StaffDTO> getAllStaff() {
-        List<StaffDTO> staff = staffService.getAllStaff();
-        staff.addAll(doctorService.getAllDoctors());
-        return staff;
+	    //staff.addAll(doctorService.getAllDoctors());
+        return staffService.getAllStaff();
     }
 
 
