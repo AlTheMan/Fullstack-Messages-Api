@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>algot.emil</groupId>
-    <artifactId>MessagesApi</artifactId>
+    <artifactId>MessageApi</artifactId>
     <version>1.0</version>
-    <name>MessagesApi</name>
-    <description>MessagesApi</description>
+    <name>MessageApi</name>
+    <description>MessageApi</description>
     <properties>
         <java.version>17</java.version>
     </properties>
