@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: messageapi-deployment
+  labels:
+    app: messageapi
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: messageapi
+  
+  template:
+    metadata:
+      labels:
+        app: messageapi
+    
+    spec:
+      containers:
+        - name: messageapi
+          image: registry.cloud.cbh.kth.se/deploy-c4eed4d9-2bc5-4bab-a9a4-e9d756ba89bc/message-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: messageapi-service
+spec:
+  selector:
+    app: messageapi
+
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
