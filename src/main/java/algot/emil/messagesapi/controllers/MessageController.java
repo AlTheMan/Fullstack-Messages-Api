@@ -1,6 +1,7 @@
 package algot.emil.messagesapi.controllers;
 
 
+import algot.emil.entities.Patient;
 import algot.emil.messagesapi.dto.GetMessageDTO;
 import algot.emil.messagesapi.dto.PatientDTO;
 import algot.emil.messagesapi.dto.SendMessageDTO;

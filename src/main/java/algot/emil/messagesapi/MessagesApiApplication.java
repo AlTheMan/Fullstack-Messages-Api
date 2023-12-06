@@ -24,14 +24,5 @@ public class MessagesApiApplication {
         SpringApplication.run(MessagesApiApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner initData(MessageRepository messageRepository) {
-
-        return args -> {
-
-            Message message = new Message(3L,1L, 3L,"hej");
-            messageRepository.save(message);
-        };
-    }
 
 }
