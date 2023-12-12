@@ -50,7 +50,6 @@ public class MessageController {
      */
     @GetMapping("/getAllStaff")
     public List<StaffDTO> getAllStaff() {
-	    //staff.addAll(doctorService.getAllDoctors());
         return staffService.getAllStaff();
     }
 

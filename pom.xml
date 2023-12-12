@@ -31,7 +31,7 @@
         <dependency>
             <groupId>com.github.emilwennstrom</groupId>
             <artifactId>ApiLibrary</artifactId>
-            <version>-SNAPSHOT</version>
+            <version>master-SNAPSHOT</version>
         </dependency>
 
         <!--<dependency>
